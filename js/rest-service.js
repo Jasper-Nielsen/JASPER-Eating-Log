@@ -1,11 +1,16 @@
 import { prepareData } from "./helpers.js";
 
+
+const endpoint =
+  "https://test-d2238-default-rtdb.europe-west1.firebasedatabase.app/";
 // CREATE
 
-async function createFoodEntry(time, food) {
+async function createFoodEntry(entry, day, month, year) {
   const newEntryObject = {
-    time: time,
-    food: food,
+    entry: entry,
+    day: day,
+    month: month,
+    year: year,
   };
 
   const response = await fetch(`${endpoint}/food.json`, {
@@ -19,17 +24,19 @@ async function createFoodEntry(time, food) {
 // READ
 
 async function getLogs() {
-  const response = await fetch(`${endpoint}/logs.json`);
+  const response = await fetch(`${endpoint}/food.json`);
   const data = await response.json();
   const logs = prepareData(data);
   return logs;
 }
 
 // UPDATE
-async function updateFoodEntry(id, time, food) {
+async function updateFoodEntry(id, entry, day, month, year) {
   const foodEntryToUpdate = {
-    time: time,
-    food: food,
+    entry: entry,
+    day: day,
+    month: month,
+    year: year,
   };
 
   const response = fetch(`${endpoint}/food/${id}.json`, {

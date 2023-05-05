@@ -11,13 +11,41 @@
 <body>  
     <main>
             <header>
-                <form id="day-form">
-                    <label for="day"/>Choose a Day:</label>
-                    <input type="text" name="day" min="1" max="31" placeholder="Put in a number between 1 and 31" size="25"/>
-                    <button class="confirm-btn">Confirm Day</button>
-                </form>
+                <fieldset>
+                    <legend>Food info</legend>
+                        <form id="create-entry-from">
+                            <label for="year"></label>
+                            <input type="number" name="year" id="year-input" placeholder="Wirte a year"/>
+                            <br>
+                            
+                            <label for="month">Choose a Month:</label>
+                                <select name="month" id="month-selected">
+                                    <option value="january">January</option>
+                                    <option value="february">February</option>
+                                    <option value="march">March</option>
+                                    <option value="april">April</option>
+                                    <option value="may">May</option>
+                                    <option value="june">June</option>
+                                    <option value="july">July</option>
+                                    <option value="august">August</option>
+                                    <option value="september">September</option>
+                                    <option value="october">October</option>
+                                    <option value="november">November</option>
+                                    <option value="december">December</option>
+                                </select>
+                                <br>
 
-                <form id="month-form"> 
+                                <label for="day"/>Choose a Day:</label>
+                            <input type="text" id="day-selected" name="day" min="1" max="31" placeholder="Put in a number between 1 and 31" size="25"/>
+                            <br>
+                            <textarea name="food-input" id="entry" placeholder="Time of day and food. eg: 10:00 toast butter cheese" rows="4" cols="50" > </textarea>
+                            <br>
+
+                            <button class="confirm-btn">Confirm Entry</button>
+                        </form>
+                </fieldset>
+
+                <!-- <form id="month-form"> 
                     <label for="month">Choose a Month:</label>
                         <select name="month" id="month-selected">
                             <option value="january">January</option>
@@ -33,28 +61,37 @@
                             <option value="november">November</option>
                             <option value="december">December</option>
                         </select>
-                <button class="confirm-btn">Confirm Month</button>
-                </form>
+                        <button class="confirm-btn">Confirm month</button>
+                </form> -->
+                <!-- <form id="day-form">
+                    <label for="day"/>Choose a Day:</label>
+                    <input type="text" id="day-selected" name="day" min="1" max="31" placeholder="Put in a number between 1 and 31" size="25"/>
+                    <button class="confirm-btn">Confirm Day</button>
+                </form> -->
+                
 
-                <form id="year-form">
-                    <label for="year"></label>
-                    <input type="number" name="year" placeholder="Wirte a year"/>
-                     <button class="confirm-btn">Confirm Year</button>
-                </form>
-
-                <form  id="food-log-form">
+                <!-- <form  id="food-log-form">
                 <textarea name="food-input" id="food-input" placeholder="Time of day and food. eg: 10:00 toast butter cheese" rows="4" cols="50" > </textarea>
                     <button class="confirm-btn">Confirm food</button>
                 </form>
-            </header>
+            </header> -->
 
-        <section id="log-section"></section>
+        <section id="log-section">
+            <h4>Logs</h4>
+            <p id="year">year
+                <p id="month">month
+                    <p id="day">day
+                        <article id="log">food</article>
+                    </p>
+                </p>
+            </p>
+        </section>
 
     </main>
 
 
 
 
-    <script src="script.js"></script>
+    <script src="js/script.js"type="module"></script>
 </body>
 </html>
